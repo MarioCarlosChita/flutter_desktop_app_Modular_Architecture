@@ -1,0 +1,4 @@
+enum TypeYesNO{
+  Yes,
+  No
+}
