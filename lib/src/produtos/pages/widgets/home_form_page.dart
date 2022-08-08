@@ -12,12 +12,13 @@ class HomeFormPage extends StatefulWidget {
 class _HomeFormPageState extends State<HomeFormPage> {
   final GlobalKey<FormState> _formulario  =  new GlobalKey<FormState>();
 
-  final TextEditingController _nome = TextEditingController();
-  final TextEditingController _fabricante = TextEditingController();
-  final TextEditingController _preco =  TextEditingController();
-  final TextEditingController _validade =  TextEditingController();
-  final TextEditingController _quantidade = TextEditingController();
+  final TextEditingController _nome        = TextEditingController();
+  final TextEditingController _fabricante  = TextEditingController();
+  final TextEditingController _preco       = TextEditingController();
+  final TextEditingController _validade    = TextEditingController();
+  final TextEditingController _quantidade  = TextEditingController();
   final TextEditingController _codigoBarra = TextEditingController();
+  final TextEditingController _descricao   = TextEditingController();
   late  String imagePath;
   int   stepperAtual = 0;
 
@@ -120,40 +121,117 @@ class _HomeFormPageState extends State<HomeFormPage> {
   Widget _finalizadoDetail() {
     return Container(
       height: 600,
-       child:Row(
-         crossAxisAlignment: CrossAxisAlignment.start,
-         mainAxisAlignment: MainAxisAlignment.start,
-         children: [
-             Container(
-               width:120,
-               height:120,
-               color: Colors.grey,
-               padding: EdgeInsets.all(1),
-               child:Column(
-                   crossAxisAlignment: CrossAxisAlignment.center,
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   children: const [
-                     Center(
-                       // child:Icon(Icons. , color: Colors.black,),
-                     ),
-                     SizedBox(height:2,),
-                     Text("Seleciona uma imagem"
-                       ,style: TextStyle(
-                          color: Colors.black
-                         ,fontSize: 9
-                         ,fontWeight:FontWeight.bold
-                       ),)
-                   ],
-               ),
-             ) ,
-             Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
-               mainAxisAlignment: MainAxisAlignment.start,
-               children: [
+       child:Column(
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width:120,
+                  height:120,
+                  color: Colors.grey,
+                  padding: EdgeInsets.all(1),
+                  child:Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Center(
+                        child:Icon(Icons.add,color:Colors.black),
+                      ),
+                      SizedBox(height:2,),
+                      Text("Seleciona uma imagem"
+                        ,style: TextStyle(
+                            color: Colors.black
+                            ,fontSize: 9  // child:Icon(Icons. , color: Colors.black,),
+                            ,fontWeight:FontWeight.bold
+                        ),)
+                    ],
+                  ),
+                ) ,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width:400,
+                          child:  TextFormField(
+                            controller: _codigoBarra,
+                            decoration: InputDecoration(
+                                hintText: "Codigo de Barra",
+                                suffixIcon: Icon(Icons.sell , color:Colors.grey.withOpacity(0.4),),
+                                border: const OutlineInputBorder(
+                                    borderRadius: BorderRadius.zero,
+                                    borderSide: BorderSide(
+                                        color: Colors.white12
+                                    )
+                                ),
+                                focusedBorder:const OutlineInputBorder(
+                                    borderRadius: BorderRadius.zero,
+                                    borderSide: BorderSide(
+                                        color: Colors.green
+                                    )
+                                )
+                            ),
+                          ),
+                        ),
+                        const  SizedBox(width:5,),
+                        MaterialButton(
+                          onPressed:(){}
+                          ,minWidth:60
+                          ,height:60
+                          ,color: Colors.green
+                          ,child: Icon(Icons.update ,color: Colors.white,),
+                        )
 
-               ],
-             )
-         ],
+                      ],
+                    ),
+                    const  SizedBox(height:20,),
+                    SizedBox(
+                      width:456,
+                      height:120,
+                      child:  TextFormField(
+                        controller: _descricao,
+                        minLines: 1,
+                        maxLength: 30,
+                        maxLines: 30,
+                        keyboardType: TextInputType.multiline,
+                        decoration: InputDecoration(
+                            hintText: "Descrição do Produto",
+                            suffixIcon: Icon(Icons.text_fields , color:Colors.grey.withOpacity(0.4),),
+                            border: const OutlineInputBorder(
+                                borderRadius: BorderRadius.zero,
+                                borderSide: BorderSide(
+                                    color: Colors.white12
+                                )
+                            ),
+                            focusedBorder:const OutlineInputBorder(
+                                borderRadius: BorderRadius.zero,
+                                borderSide: BorderSide(
+                                    color: Colors.green
+                                )
+                            )
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            MaterialButton(
+                onPressed: (){}
+               ,minWidth: 300
+               ,height:60
+               ,color: Colors.green
+               ,child: const Text("Cadastrar",style: TextStyle(
+                  color:Colors.black
+            ),),
+            )
+          ],
        )
     );
   }

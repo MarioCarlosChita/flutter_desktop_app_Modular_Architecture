@@ -6,7 +6,6 @@ import 'package:school_system/src/injection/injection.dart';
 void main(){
   // reading  injections dependencies
   configureDependencies();
-
   WidgetsFlutterBinding.ensureInitialized();
 
   return runApp(MaterialApp(
@@ -15,5 +14,4 @@ void main(){
     builder: locator.get<OneContext>().builder,
     navigatorKey: locator.get<OneContext>().key,
    ));
-
 }

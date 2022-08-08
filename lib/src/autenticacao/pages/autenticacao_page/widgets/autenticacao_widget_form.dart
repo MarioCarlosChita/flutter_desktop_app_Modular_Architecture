@@ -86,7 +86,7 @@ class _AutenticacaoWidgetFormState extends State<AutenticacaoWidgetForm> {
                   MaterialButton(
                     onPressed: ()=> _autenticacao(),
                     minWidth: 400,
-                    child: Text("Entrar" , style: TextStyle(
+                    child:Text("Entrar" , style: TextStyle(
                         color: Colors.white
                     ),),
                     height: 60,

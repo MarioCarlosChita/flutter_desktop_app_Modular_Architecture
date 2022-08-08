@@ -8,7 +8,6 @@ class DatabaseErrorException  extends  DatabaseException {
   DatabaseErrorException({required super.message});
 }
 
-
 class DatabaseColumnException extends  DatabaseException {
   DatabaseColumnException({required super.message});
 }

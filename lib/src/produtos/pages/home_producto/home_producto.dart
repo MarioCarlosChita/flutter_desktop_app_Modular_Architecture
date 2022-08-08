@@ -28,11 +28,11 @@ class _HomeProductoPageState extends State<HomeProductoPage> {
               style: TextStyle(color:Colors.black, fontWeight: FontWeight.bold , fontSize: 20),
             ),
           ),
-          SizedBox(height:5,),
+          const SizedBox(height:5,),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
                HomeFormPage(),
                HomeListPage()
             ],

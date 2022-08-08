@@ -4,7 +4,6 @@ import 'package:school_system/src/autenticacao/pages/autenticacao_page/widgets/a
 
 class AutenticacaoPage extends StatefulWidget {
   const AutenticacaoPage({Key? key}) : super(key: key);
-
   @override
   State<AutenticacaoPage> createState() => _AutenticacaoPageState();
 }

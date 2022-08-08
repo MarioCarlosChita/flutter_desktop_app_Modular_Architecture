@@ -90,8 +90,20 @@ class QueryTemplateHelper{
      return queryTemplate;
    }
 
-   // String updateTemplates() {
-   //   String  queryTemplate  ="INSERT INTO ${tables[0]} (";
-   // }
-
+//    String updateTemplates() {
+//      String  queryTemplate  ="INSERT INTO ${tables[0]} (";
+//
+//      hasManyColumns  = this.columns.length  > 1 ;
+//
+//      if(hasManyColumns) {
+//         for (int  i = 0;   i<columns.length  ; ++i) {
+//             if(i ==  columns.length -1) {
+//
+//             } else {
+//
+//             }
+//         }
+//     }
+//
+// }
 }
